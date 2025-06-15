@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kyara Beverages</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="text-[#5a4a4a]">
+  <div class="relative">
+
+    <div id="hero-section"></div>
+
+    <div id="about-section"></div>
+
+    <div id="product-section"></div>
+
+    <div id="contact-section"></div>
+
+    <div id="footer-section"></div>
+
+  </div>
+
+  <script>
+    // Function to fetch and insert HTML content
+    const includeHTML = (elementId, filePath) => {
+      fetch(filePath)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => console.error('Error loading file:', error));
+    };
+
+    includeHTML('hero-section', 'sections/hero.html');
+    includeHTML('about-section', 'sections/about.html');
+    includeHTML('product-section', 'sections/product.html');
+    includeHTML('contact-section', 'sections/contact.html');
+    includeHTML('footer-section', 'sections/footer.html');
+  </script>
+</body>
+</html>
